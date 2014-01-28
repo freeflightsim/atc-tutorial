@@ -49,8 +49,13 @@ def before_request():
         g.user = None
 
 @app.route('/')
-def index():
-    """
-    renders the index page template
-    """
-    return render_template('index.html')
+@app.route('/<page>')
+def index(page=None):
+    
+    if page == None:
+		page = "home"
+    
+    return render_template('%s.html' % page)
+
+
+
