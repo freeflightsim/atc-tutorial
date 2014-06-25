@@ -3,57 +3,76 @@
 {% block content %}
 
 <div class="container">
+	<h1>Basic Concepts</h1>
 	<div class="row">
-		<div class="col-md-2"></div>
+		
 		<div class="col-md-6">
+			<h3>Limited vocabulary</h3>
 			<p>The first important concept you need to know is <b>limited vocabulary</b>. Understanding what someone says over the radio is difficult; mics are muffled or distorted, or there's background noise on one or both ends, or people are stressed from multi-tasking, or trying to talk fast because of their workload. You can't always make out every syllable of every word. However, in aviation and public safety and other life-dependant communication, misunderstandings must be minimized or eliminated. Pilots and controllers therefore use a limited set of <b>standard phrases</b> and this reduces the chance that an affirmative phrase can be mistaken for a negative one.
 			</p>
+		</div>
+		
+		<div class="col-md-6">
+			<h3>&nbsp;</h3>
+			<pre>descend, climb, turn left, turn right</pre>
+			<pre>stop hold wait start proceed</pre>
+			<pre>Echo Alpha Sexy Yankee</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h3>Communication is two-way</h3>
 			<p>The second critical notion is that <b>communication is two-way</b>. The blame for a misunderstanding can almost always be laid upon the feet of two people; the one delivering the message and the one receiving it. Again with the goal of reducing misunderstandings, standard aviation procedure calls for pilots to <b>read back</b> (i.e. repeat) certain instructions they are given, so that the controller can verify that the pilot heard them correctly.<p>
 		</div>
 		
-		<div class="col-md-4">
-
-			<div id="chart_div" style="width:500; height:300"></div>
-			<!--Load the AJAX API-->
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-			<script type="text/javascript">
-
-				// Callback that creates and populates a data table, 
-				// instantiates the pie chart, passes in the data and
-				// draws it.
-				function drawChart() {
-
-				var data = new google.visualization.DataTable();
-						data.addColumn('string', 'Name');
-						data.addColumn('string', 'Manager');
-						data.addColumn('string', 'ToolTip');
-						data.addRows([
-						[{v:'PushBack and Startup'}, '', 'The President'],
-						[{v:'Taxi to Runway' }, 'PushBack and Startup', 'VP'],
-						['Take Off', 'Taxi to Runway', ''],
-						['Departure and Climb', 'Take Off', 'Bob Sponge'],
-						['Cruise', 'Departure and Climb', ''],
-						['Descent', 'Cruise', 'Bob Sponge'],
-						['Approach and Landing', 'Descent', 'Bob Sponge'],
-						['Taxi and Shutdown', 'Approach and Landing', 'Bob Sponge'],
-						]);
-
-					// Set chart options
-					//var options = {'title':'How Much Pizza I Ate Last Night',
-					//				'width':400, 'height':300, "allowHtml": true};
-
-					// Instantiate and draw our chart, passing in some options.
-					var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
-					chart.draw(data, {"allowHtml": true});
-				}
-
-				// Load the Visualization API library and the piechart library.
-				google.load('visualization', '1.0', {'packages':['orgchart']});
-				google.setOnLoadCallback(drawChart);
-			
-			</script>
-		
+		<div class="col-md-6">
+			<h3>&nbsp;</h3>
+			<pre>ATC: speedbird one zero, turn right heading zero one zero</pre>
+			<pre>S01: turn right heading one zero zero, speedbird zero one</pre>
+			<pre>ATC: negative speedbird one zero, turn right heading zero one zero</pre>
+			<pre>S01: turning right heading zero one zero, speedbird zero one</pre>
+		</div>
 	</div>
-</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-6">
+		<h2>Numbers</h2> 
+			<p>For starters, virtually all numbers said over a two-way radio should be read out as individual digits.  
+			<ul><li><em>'<b>one fifty</b>'</em> and <em>'<b>one sixty</b>'</em> can sound very similar,</li>
+				<li><em>'<b>one five zero</b>'</em> and <em>'<b>one six zero</b>'</em> are much easier to distinguish from one another.</li>
+			</ul>
+			<p>The only place this is often relaxed is with the flight number in a callsign eg: FA1180 could very well be said "FreeAir Eleven Eighty" and not "Freeair one-one-eight-zero."  
+			</p>
+			<p>However, all <a href="/heading">headings</a>, <a href="/airspeed">airspeeds</a>, <a href="/altitude">altitudes</a>, altimeter readings, frequencies, and runway numbers should always be pronounced per digit.</p>
+
+		</div>
+		<div class="col-md-4">
+			<h2>LEARN</h2> 
+			<table class="table table-condensed">
+				<thead>
+					<tr><th>1</th><th>One</th><th>wan</th></tr>
+				<thead>
+				<tbody>
+					<tr><td>1</td><td>One</td><td>wan</td></tr>
+				<tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-6">
+
+		<h4><span class="glyphicon glyphicon-star"></span> Number 9</h4>
+		<p>There are two digits that can be mistaken for one another when sound quality is poor, and those are "five" and "nine".  This caused the governing body, years ago, to institute the practice of using the pronunciation "niner" in place of "nine" to ensure that it could not be confused with "five."  </p>
+
+		</div>
+		<div class="col-md-4">
+			<div class="alert alert-warning">
+			<p>Some amateurs who are not aware of the reasoning for this adjustment often erroneously believe that adding the suffix "-er" to the end of numbers is just something pilots do to sound "cool."  If you ever hear someone say "fiver" over the air in any two-way radio setting, please educate them -- as such a practice can be quite painful to the trained ear!</p>
+			</div>
+		</div>
+	</div>
 	
+</div>	
 {% endblock %}

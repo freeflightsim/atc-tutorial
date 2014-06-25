@@ -1,0 +1,93 @@
+{% extends "BASE.html" %}
+
+{% block content %}
+<div class="container">
+
+
+	
+	
+	<div class="row">
+		<div class="col-md-8">
+		<h1>Standard Terminal Arrival Route (STAR)</h1> 
+			<ul>
+				<li>A STAR is a published prcedure and aicraft can take for arrival nearby an airport</li>
+				<li>A STAR explains the flight plan from higher altitude down to the VOR</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+			
+			<ul>
+				<li><a href="http://en.wikipedia.org/wiki/Standard_terminal_arrival_route">STAR at Wikipedia</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<h3>STAR's for EGLL London Heathrow</h3>
+			<ul>
+				<li>All the STAR's in EGLL's case end up at VOR stations</li>
+				<li>The STAR's accomodate approaches from any direction</li>
+				<li>The end of the STAR is the start of the "Final Approach Preocedure"</li>
+			</ul>
+			<img src="http://wiki.flightgear.org/images/b/b7/Ac001_EGLL_STARs_map.jpeg" width="100%">
+		</div>
+		<div class="col-md-4">
+		<p>NOTE: arrival is named vie endpoint, eg BNN4A ends at BNN</p>
+		<ul>
+			<li><span class="label label-primary">LAM</span> Lambourne - for E/NE arrivals</li>
+			<li><span class="label label-warning">OCK</span> Ockham - for S/SW arrivals</li>
+			<li><span class="label label-info">TOMMO</span> TOMMO - for W arrivals</li>
+			<li><span class="label label-success">BOV</span> Bovingdon - for NW/N arrivals</li>
+		</ul>
+
+		</ul>
+		</div>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-12">
+
+			<div id="chart_div" style="width:500; height:500"></div>
+			<!--Load the AJAX API-->
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<script type="text/javascript">
+
+	      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Fix', 'Ceiling', 'Floor'],
+          ['HON',  19000,      14000],
+          ['TOBID',  19000,      14000],
+          ['SOPIT',  17000,      12000],
+          ['WCO',  15000,      10000],
+          ['BOV',  15000,       8000],
+          ['ILS',  3000,       3000],
+          ['EGLL Runway', 0,      100]
+        ]);
+
+        var options = {
+          title: 'Bovingdon Arrival from Honiley'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+			
+			</script>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-10">
+			<pre>BNN 4A Arrival via L10 (FL190 & below), N615 (FL90 to FL140) to HON VOR continue on HON VOR R142 to TOBID 
+then SOPIT (FL150 by SOPIT) to WCO NDB then turn left onto BNN VOR R299 to BNN VOR.</pre>
+		</div>
+		<div class="col-md-2">
+		Read the original here
+		</div>
+	</div>	
+
+</div>
+{% endblock %}

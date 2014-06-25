@@ -1,0 +1,59 @@
+{% extends "BASE.html" %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-6">
+			<p>The first important concept you need to know is <b>limited vocabulary</b>. Understanding what someone says over the radio is difficult; mics are muffled or distorted, or there's background noise on one or both ends, or people are stressed from multi-tasking, or trying to talk fast because of their workload. You can't always make out every syllable of every word. However, in aviation and public safety and other life-dependant communication, misunderstandings must be minimized or eliminated. Pilots and controllers therefore use a limited set of <b>standard phrases</b> and this reduces the chance that an affirmative phrase can be mistaken for a negative one.
+			</p>
+			<p>The second critical notion is that <b>communication is two-way</b>. The blame for a misunderstanding can almost always be laid upon the feet of two people; the one delivering the message and the one receiving it. Again with the goal of reducing misunderstandings, standard aviation procedure calls for pilots to <b>read back</b> (i.e. repeat) certain instructions they are given, so that the controller can verify that the pilot heard them correctly.<p>
+		</div>
+		
+		<div class="col-md-4">
+
+			<div id="chart_div" style="width:500; height:300"></div>
+			<!--Load the AJAX API-->
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<script type="text/javascript">
+
+				// Callback that creates and populates a data table, 
+				// instantiates the pie chart, passes in the data and
+				// draws it.
+				function drawChart() {
+
+				var data = new google.visualization.DataTable();
+						data.addColumn('string', 'Name');
+						data.addColumn('string', 'Manager');
+						data.addColumn('string', 'ToolTip');
+						data.addRows([
+						[{v:'PushBack and Startup'}, '', 'The President'],
+						[{v:'Taxi to Runway' }, 'PushBack and Startup', 'VP'],
+						['Take Off', 'Taxi to Runway', ''],
+						['Departure and Climb', 'Take Off', 'Bob Sponge'],
+						['Cruise', 'Departure and Climb', ''],
+						['Descent', 'Cruise', 'Bob Sponge'],
+						['Approach and Landing', 'Descent', 'Bob Sponge'],
+						['Taxi and Shutdown', 'Approach and Landing', 'Bob Sponge'],
+						]);
+
+					// Set chart options
+					//var options = {'title':'How Much Pizza I Ate Last Night',
+					//				'width':400, 'height':300, "allowHtml": true};
+
+					// Instantiate and draw our chart, passing in some options.
+					var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+					chart.draw(data, {"allowHtml": true});
+				}
+
+				// Load the Visualization API library and the piechart library.
+				google.load('visualization', '1.0', {'packages':['orgchart']});
+				google.setOnLoadCallback(drawChart);
+			
+			</script>
+		
+	</div>
+</div>
+	
+{% endblock %}

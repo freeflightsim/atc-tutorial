@@ -12,7 +12,7 @@ Site is built using:
 - bootstrap for layouts and structure
 
 Goals:
-- try and make a nice clean consise guide for muppets
+- try and make a nice clean concise guide for muppets
 - avoid png and images in favour to javascript live
 - embed videos and rich media
 - make interactive
